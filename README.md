@@ -54,7 +54,7 @@ ps:综合考虑小波分解的分辨率以及信号频率等因素，选取合�
 
 又称为线性二次滤波LQE，使用随时间观察到的一系列测试值，并产生未知变量的估计值  
 
-应用领域： **信号检测**，**机器人运动预测**   
+应用领域： **信号处理**，**机器人运动预测**   
 
 
 ![](https://img.shields.io/badge/-%E7%BA%AF%E6%97%B6%E5%9F%9F%E6%BB%A4%E6%B3%A2%E5%99%A8-lightgrey)  
@@ -71,7 +71,7 @@ ps:综合考虑小波分解的分辨率以及信号频率等因素，选取合�
     `先算出：`
     * <img src="http://latex.codecogs.com/gif.latex?\tilde{\textbf{y}}_k=\textbf{z}_k-\textbf{H}_k\hat{\textbf{x}}_{k|k-1}" /> (**测量残差**)
     * <img src="http://latex.codecogs.com/gif.latex?\textbf{S}_k=\textbf{H}_k\textbf{P}_{k|k-1}\textbf{H}_k^T+\textbf{R}_k" /> (**测量残差协方差**)
-    * <img src="http://latex.codecogs.com/gif.latex?\\textbf{K}_k=\textbf{P}_{k|k-1}\textbf{H}_k^T\textbf{S}_k^{-1}" /> (**最佳卡尔曼增益**)
+    * <img src="http://latex.codecogs.com/gif.latex?\textbf{K}_k=\textbf{P}_{k|k-1}\textbf{H}_k^T\textbf{S}_k^{-1}" /> (**最佳卡尔曼增益**)
     `然后用它们来更新滤波器变量x,p`
     * <img src="http://latex.codecogs.com/gif.latex?\hat{\textbf{x}}_{k|k}=\hat{\textbf{x}}_{k-1|k-1}+\textbf{K}_k\widetilde{\textbf{y}}_k" /> (**更新的状态估计**)
     * <img src="http://latex.codecogs.com/gif.latex?\textbf{P}_{k|k}=(I-\textbf{K}_k\textbf{H}_k)\textbf{P}_{k|k-1}" />  (**预测估计协方差矩阵**)
