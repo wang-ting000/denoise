@@ -48,10 +48,12 @@ ps:综合考虑小波分解的分辨率以及信号频率等因素，选取合�
 优点：在自适应均衡的时候就可以很快的跟踪到信道的参数，减少了训练序列的发送时间，从而提高了信道的利用率。
 缺点：收敛速度慢
 
-### ![](https://img.shields.io/badge/5-%E5%8D%A1%E5%B0%94%E6%9B%BC%E6%BB%A4%E6%B3%A2%E5%99%A8-yellowgreen)
-<img align="right" img width = '200' height = '150' src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Kalman_filter_model.png"/>
+### ![](https://img.shields.io/badge/5-%E5%8D%A1%E5%B0%94%E6%9B%BC%E6%BB%A4%E6%B3%A2%E5%99%A8-yellowgreen)  
+<img align="right" img width = '200' height = '150' src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Kalman_filter_model.png"/>  
+
 又称为线性二次滤波LQE，使用随时间观察到的一系列测试值，并产生未知变量的估计值  
-应用领域：**信号检测**，**机器人运动预测**  
+
+应用领域： **信号检测**，**机器人运动预测**   
 
 
 ![](https://img.shields.io/badge/-%E9%94%81%E7%9B%B8%E7%8E%AF%E5%B0%B1%E6%98%AF%E4%B8%80%E4%B8%AAKarman%E6%BB%A4%E6%B3%A2%E5%99%A8%EF%BC%81-red)
