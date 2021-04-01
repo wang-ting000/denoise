@@ -66,12 +66,14 @@ ps:综合考虑小波分解的分辨率以及信号频率等因素，选取合�
 * <img src="http://latex.codecogs.com/gif.latex?\textbf{P}_{k|k}" /> `后验估计误差协方差矩阵，度量估计值的精确程度`
 * **预测**
     * <img src="http://latex.codecogs.com/gif.latex?\hat{\textbf{x}}_{k|k-1}=\textbf{F}_k\hat{\textbf{x}}_{k-1|k-1}+\textbf{B}_k\textbf{U}_k" /> (**预测状态**)
-    * <img src="http://latex.codecogs.com/gif.latex?\textbf{P}_{k|k-1}=\textbf{F}_k\hat{\textbf{P}}_{k-1|k-1}\textbf{F}_k^T+\textbf{Q}_k" />  (**预测估计协方差矩阵**)
-* **更新**
+    * <img src="http://latex.codecogs.com/gif.latex?\textbf{P}_{k|k-1}=\textbf{F}_k\textbf{P}_{k-1|k-1}\textbf{F}_k^T+\textbf{Q}_k" />  (**预测估计协方差矩阵**)
+* **更新**  
+
     `先算出：`
     * <img src="http://latex.codecogs.com/gif.latex?\tilde{\textbf{y}}_k=\textbf{z}_k-\textbf{H}_k\hat{\textbf{x}}_{k|k-1}" /> (**测量残差**)
     * <img src="http://latex.codecogs.com/gif.latex?\textbf{S}_k=\textbf{H}_k\textbf{P}_{k|k-1}\textbf{H}_k^T+\textbf{R}_k" /> (**测量残差协方差**)
-    * <img src="http://latex.codecogs.com/gif.latex?\textbf{K}_k=\textbf{P}_{k|k-1}\textbf{H}_k^T\textbf{S}_k^{-1}" /> (**最佳卡尔曼增益**)
+    * <img src="http://latex.codecogs.com/gif.latex?\textbf{K}_k=\textbf{P}_{k|k-1}\textbf{H}_k^T\textbf{S}_k^{-1}" /> (**最佳卡尔曼增益**)  
+    
     `然后用它们来更新滤波器变量x,p`
     * <img src="http://latex.codecogs.com/gif.latex?\hat{\textbf{x}}_{k|k}=\hat{\textbf{x}}_{k-1|k-1}+\textbf{K}_k\widetilde{\textbf{y}}_k" /> (**更新的状态估计**)
     * <img src="http://latex.codecogs.com/gif.latex?\textbf{P}_{k|k}=(I-\textbf{K}_k\textbf{H}_k)\textbf{P}_{k|k-1}" />  (**预测估计协方差矩阵**)
