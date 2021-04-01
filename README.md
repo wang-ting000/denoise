@@ -56,9 +56,12 @@ ps:综合考虑小波分解的分辨率以及信号频率等因素，选取合�
 应用领域： **信号检测**，**机器人运动预测**   
 
 
+![](https://img.shields.io/badge/-%E7%BA%AF%E6%97%B6%E5%9F%9F%E6%BB%A4%E6%B3%A2%E5%99%A8-lightgrey)  
+
 ![](https://img.shields.io/badge/-%E9%94%81%E7%9B%B8%E7%8E%AF%E5%B0%B1%E6%98%AF%E4%B8%80%E4%B8%AAKarman%E6%BB%A4%E6%B3%A2%E5%99%A8%EF%BC%81-red)
 
-
+* karman滤波器的状态由两个变量表示：
+*   \hat{x}<sub>k</sub>
 
 ### ![](https://img.shields.io/badge/6-%E5%9F%BA%E4%BA%8E%E5%B8%8C%E5%B0%94%E4%BC%AF%E7%89%B9--%E9%BB%84%E5%8F%98%E6%8D%A2%E7%9A%84%E6%A8%A1%E6%80%81%E5%88%86%E8%A7%A3-yellowgreen)
 
