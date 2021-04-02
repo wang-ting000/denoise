@@ -62,8 +62,8 @@ ps:综合考虑小波分解的分辨率以及信号频率等因素，选取合�
 ![](https://img.shields.io/badge/-%E9%94%81%E7%9B%B8%E7%8E%AF%E5%B0%B1%E6%98%AF%E4%B8%80%E4%B8%AAKarman%E6%BB%A4%E6%B3%A2%E5%99%A8%EF%BC%81-red)
 
 * karman滤波器的状态由两个变量表示：
-* <img src="http://latex.codecogs.com/gif.latex?\hat{\textbf{x}}_{k|k}" /> `在时刻k的状态估计`
-* <img src="http://latex.codecogs.com/gif.latex?\textbf{P}_{k|k}" /> `后验估计误差协方差矩阵，度量估计值的精确程度`
+* <img src="http://latex.codecogs.com/gif.latex?\hat{\textbf{x}}_{k|k}" /> **在时刻k的状态估计**
+* <img src="http://latex.codecogs.com/gif.latex?\textbf{P}_{k|k}" /> **后验估计误差协方差矩阵，度量估计值的精确程度**
 * **预测**
     * <img src="http://latex.codecogs.com/gif.latex?\hat{\textbf{x}}_{k|k-1}=\textbf{F}_k\hat{\textbf{x}}_{k-1|k-1}+\textbf{B}_k\textbf{U}_k" /> (**预测状态**)
     * <img src="http://latex.codecogs.com/gif.latex?\textbf{P}_{k|k-1}=\textbf{F}_k\textbf{P}_{k-1|k-1}\textbf{F}_k^T+\textbf{Q}_k" />  (**预测估计协方差矩阵**)
