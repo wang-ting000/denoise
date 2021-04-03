@@ -43,7 +43,13 @@ ps:综合考虑小波分解的分辨率以及信号频率等因素，选取合�
 ## ![](https://img.shields.io/badge/2-%E8%87%AA%E9%80%82%E5%BA%94%E6%BB%A4%E6%B3%A2-yellowgreen)
 [文档](小波变换的延申.pdf)
 ### ![](https://img.shields.io/badge/3-%E7%BB%B4%E7%BA%B3%E6%BB%A4%E6%B3%A2%E5%99%A8-yellowgreen)  
+
 原理是使估计值和期望值之间的均方误差最小化
+
+* `前提假设：信号和噪声都是平稳的`
+
+* 维纳滤波器可用于解决非因果滤波器`需要无限量过去和未来的数据`、因果滤波器`需要使用无限量过去的数据`和FIR的问题，但是维纳滤波器一般用于解决第二种问题  
+* 对于因果问题，维纳滤波器的解决方式：<img src="http://latex.codecogs.com/gif.latex?\overrightarrow{h<sub>opt</sub>}=\overrightarrow{R<sub>xx</sub>^{-1}}\overrightarrow{R<sub>xs</sub>}" />,<img src="http://latex.codecogs.com/gif.latex?\overrightarrow{R<sub>xs</sub>}=\begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}" />
 ### ![](https://img.shields.io/badge/4-%E5%9F%BA%E4%BA%8E%E7%BB%B4%E7%BA%B3%E6%BB%A4%E6%B3%A2%E5%99%A8%E7%9A%84LMS%E7%AE%97%E6%B3%95-yellowgreen)
 
 一种最陡下降算法的改进算法， 是在维纳滤波理论上运用速下降法后的优化延伸，最终收敛到维纳滤波器
@@ -53,9 +59,9 @@ ps:综合考虑小波分解的分辨率以及信号频率等因素，选取合�
 ### ![](https://img.shields.io/badge/5-%E5%8D%A1%E5%B0%94%E6%9B%BC%E6%BB%A4%E6%B3%A2%E5%99%A8-yellowgreen)  
 <img align="right" img width = '200' height = '150' src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Kalman_filter_model.png"/>  
 
-又称为线性二次滤波LQE，使用随时间观察到的一系列测试值，并产生未知变量的估计值  
+* 又称为线性二次滤波LQE，使用随时间观察到的一系列测试值，并产生未知变量的估计值  
 
-`前提假设：信号和噪声都是平稳的`
+
 
 应用领域： **信号处理**，**机器人运动预测**   
 
