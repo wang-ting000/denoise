@@ -53,9 +53,12 @@ ps:综合考虑小波分解的分辨率以及信号频率等因素，选取合�
 
 <img src="http://latex.codecogs.com/gif.latex?\overrightarrow{R}_{xs}=\begin{bmatrix} \overrightarrow{R}_{xs}(0) & \overrightarrow{R}_{xs}(1) ... & \overrightarrow{R}_{xs}(M) \end{bmatrix}^T" />  
 
-<img src="http://latex.codecogs.com/gif.latex?\overrightarrow{R}_{xx}=\begin{bmatrix} \overrightarrow{R}_{xx}(0) & \overrightarrow{R}_{xx}(1) & ... & \overrightarrow{R}_{xx}(M) \\ \overrightarrow{R}_{xx}(1) & \overrightarrow{R}_{xx}(2) & ... & \overrightarrow{R}_{xx}(M-1) \\ ... & ... &... & ... \\ \overrightarrow{R}_{xx}(M) & \overrightarrow{R}_{xx}(M-1) & ... & \overrightarrow{R}_{xx}(0)\end{bmatrix}^T" />
-* 根据这个公式求出最佳的h(t)，含噪声信号和它的卷积就是期望信号
-* 最后的效果如下：由于对称矩阵的特点，以至于有一半的信号未被恢复，对于平稳信号而言，并未造成信号的丢失（个人认为是的吧）
+<img src="http://latex.codecogs.com/gif.latex?\overrightarrow{R}_{xx}=\begin{bmatrix} \overrightarrow{R}_{xx}(0) & \overrightarrow{R}_{xx}(1) & ... & \overrightarrow{R}_{xx}(M) \\ \overrightarrow{R}_{xx}(1) & \overrightarrow{R}_{xx}(2) & ... & \overrightarrow{R}_{xx}(M-1) \\ ... & ... &... & ... \\ \overrightarrow{R}_{xx}(M) & \overrightarrow{R}_{xx}(M-1) & ... & \overrightarrow{R}_{xx}(0)\end{bmatrix}^T" />  
+
+* 根据这个公式求出最佳的h(t)，含噪声信号和它的卷积就是期望信号  
+
+* 最后的效果如下：由于对称矩阵的特点，以至于有一半的信号未被恢复，对于平稳信号而言，并未造成信号的丢失（个人认为是的吧） 
+
 *![wiener](https://i.loli.net/2021/04/03/DVKAtp64517gNod.png)
 
 ### ![](https://img.shields.io/badge/4-%E5%9F%BA%E4%BA%8E%E7%BB%B4%E7%BA%B3%E6%BB%A4%E6%B3%A2%E5%99%A8%E7%9A%84LMS%E7%AE%97%E6%B3%95-yellowgreen)
