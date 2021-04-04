@@ -65,14 +65,20 @@ ps:综合考虑小波分解的分辨率以及信号频率等因素，选取合�
 
 * 一种最陡下降算法的改进算法， 是在维纳滤波理论上运用速下降法后的优化延伸，最终收敛到维纳滤波器  
 
+* <img align="right" img width = '500' height = '300' src="https://upload.wikimedia.org/wikipedia/commons/6/62/Lms_filter.svg"/>
+
 * 优点：在自适应均衡的时候就可以很快的跟踪到信道的参数，减少了训练序列的发送时间，从而提高了信道的利用率；易于操作，性能稳健  
 
 * 缺点：收敛速度慢  
+  
 
-* 算法实现：<img src="http://latex.codecogs.com/gif.latex?e(n)=d(n);\\y(n)=\overrightarrow{x}^T(n)\overrightarrow{w}^T(n);\\ \overtightarrow{w}(n+1)=\overrightarrow(n)+2*\mu*e(n)*\overrightarrow{x}(n)" />  
+* 算法实现： <img src="http://latex.codecogs.com/svg.latex?e(n)=d(n)-y(n);\\ \\y(n)=\overrightarrow{x}^T(n)\overrightarrow{w}^T(n);\\ \\ \overrightarrow{w}(n+1)=\overrightarrow{w}(n)+2*\mu*e(n)*\overrightarrow{x}(n)" />  
+* 收敛效率：
+
+
 
 ### ![](https://img.shields.io/badge/5-%E5%8D%A1%E5%B0%94%E6%9B%BC%E6%BB%A4%E6%B3%A2%E5%99%A8-yellowgreen)  
-<img align="right" img width = '200' height = '150' src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Kalman_filter_model.png"/>  
+<img align="right" img width = '300' height = '200' src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Kalman_filter_model.png"/>  
 
 * 又称为线性二次滤波LQE，使用随时间观察到的一系列测试值，并产生未知变量的估计值  
 
