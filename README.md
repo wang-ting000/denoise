@@ -49,7 +49,7 @@ ps:综合考虑小波分解的分辨率以及信号频率等因素，选取合�
 * `前提假设：信号和噪声都是平稳的`
 
 * 维纳滤波器可用于解决非因果滤波器`需要无限量过去和未来的数据`、因果滤波器`需要使用无限量过去的数据`和FIR的问题，但是维纳滤波器一般用于解决第二种问题  
-* 对于因果问题，维纳滤波器的解决方式：<img src="http://latex.codecogs.com/gif.latex?\overrightarrow{h}_{opt}=\overrightarrow{R}_{xx}^{-1}\overrightarrow{R}_{xs}" />  
+* 对于因果问题，维纳滤波器的解决方式：<img src="http://latex.codecogs.com/svg.latex?\overrightarrow{h}_{opt}=\overrightarrow{R}_{xx}^{-1}\overrightarrow{R}_{xs}" />  
 
 <img src="http://latex.codecogs.com/svg.latex?\overrightarrow{R}_{xs}=\begin{bmatrix} \overrightarrow{R}_{xs}(0) & \overrightarrow{R}_{xs}(1) ... & \overrightarrow{R}_{xs}(M) \end{bmatrix}^T" />  
 
