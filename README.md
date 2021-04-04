@@ -51,9 +51,9 @@ ps:综合考虑小波分解的分辨率以及信号频率等因素，选取合�
 * 维纳滤波器可用于解决非因果滤波器`需要无限量过去和未来的数据`、因果滤波器`需要使用无限量过去的数据`和FIR的问题，但是维纳滤波器一般用于解决第二种问题  
 * 对于因果问题，维纳滤波器的解决方式：<img src="http://latex.codecogs.com/gif.latex?\overrightarrow{h}_{opt}=\overrightarrow{R}_{xx}^{-1}\overrightarrow{R}_{xs}" />  
 
-<img src="http://latex.codecogs.com/gif.latex?\overrightarrow{R}_{xs}=\begin{bmatrix} \overrightarrow{R}_{xs}(0) & \overrightarrow{R}_{xs}(1) ... & \overrightarrow{R}_{xs}(M) \end{bmatrix}^T" />  
+<img src="http://latex.codecogs.com/svg.latex?\overrightarrow{R}_{xs}=\begin{bmatrix} \overrightarrow{R}_{xs}(0) & \overrightarrow{R}_{xs}(1) ... & \overrightarrow{R}_{xs}(M) \end{bmatrix}^T" />  
 
-<img src="http://latex.codecogs.com/gif.latex?\overrightarrow{R}_{xx}=\begin{bmatrix} \overrightarrow{R}_{xx}(0) & \overrightarrow{R}_{xx}(1) & ... & \overrightarrow{R}_{xx}(M) \\ \overrightarrow{R}_{xx}(1) & \overrightarrow{R}_{xx}(2) & ... & \overrightarrow{R}_{xx}(M-1) \\ ... & ... &... & ... \\ \overrightarrow{R}_{xx}(M) & \overrightarrow{R}_{xx}(M-1) & ... & \overrightarrow{R}_{xx}(0)\end{bmatrix}^T" />  
+<img src="http://latex.codecogs.com/svg.latex?\overrightarrow{R}_{xx}=\begin{bmatrix} \overrightarrow{R}_{xx}(0) & \overrightarrow{R}_{xx}(1) & ... & \overrightarrow{R}_{xx}(M) \\ \overrightarrow{R}_{xx}(1) & \overrightarrow{R}_{xx}(2) & ... & \overrightarrow{R}_{xx}(M-1) \\ ... & ... &... & ... \\ \overrightarrow{R}_{xx}(M) & \overrightarrow{R}_{xx}(M-1) & ... & \overrightarrow{R}_{xx}(0)\end{bmatrix}^T" />  
 
 * 根据这个公式求出最佳的h(t)，含噪声信号和它的卷积就是期望信号  
 
@@ -92,21 +92,21 @@ ps:综合考虑小波分解的分辨率以及信号频率等因素，选取合�
 ![](https://img.shields.io/badge/-%E9%94%81%E7%9B%B8%E7%8E%AF%E5%B0%B1%E6%98%AF%E4%B8%80%E4%B8%AAKarman%E6%BB%A4%E6%B3%A2%E5%99%A8%EF%BC%81-red)
 
 * karman滤波器的状态由两个变量表示：
-* <img src="http://latex.codecogs.com/gif.latex?\hat{\textbf{x}}_{k|k}" /> **在时刻k的状态估计**
-* <img src="http://latex.codecogs.com/gif.latex?\textbf{P}_{k|k}" /> **后验估计误差协方差矩阵，度量估计值的精确程度**
+* <img src="http://latex.codecogs.com/svg.latex?\hat{\textbf{x}}_{k|k}" /> **在时刻k的状态估计**
+* <img src="http://latex.codecogs.com/svg.latex?\textbf{P}_{k|k}" /> **后验估计误差协方差矩阵，度量估计值的精确程度**
 * **预测**
-    * <img src="http://latex.codecogs.com/gif.latex?\hat{\textbf{x}}_{k|k-1}=\textbf{F}_k\hat{\textbf{x}}_{k-1|k-1}+\textbf{B}_k\textbf{U}_k" /> (**预测状态**)
-    * <img src="http://latex.codecogs.com/gif.latex?\textbf{P}_{k|k-1}=\textbf{F}_k\textbf{P}_{k-1|k-1}\textbf{F}_k^T+\textbf{Q}_k" />  (**预测估计协方差矩阵**)
+    * <img src="http://latex.codecogs.com/svg.latex?\hat{\textbf{x}}_{k|k-1}=\textbf{F}_k\hat{\textbf{x}}_{k-1|k-1}+\textbf{B}_k\textbf{U}_k" /> (**预测状态**)
+    * <img src="http://latex.codecogs.com/svg.latex?\textbf{P}_{k|k-1}=\textbf{F}_k\textbf{P}_{k-1|k-1}\textbf{F}_k^T+\textbf{Q}_k" />  (**预测估计协方差矩阵**)
 * **更新**  
 
     `先算出：`
-    * <img src="http://latex.codecogs.com/gif.latex?\tilde{\textbf{y}}_k=\textbf{z}_k-\textbf{H}_k\hat{\textbf{x}}_{k|k-1}" /> (**测量残差**)
-    * <img src="http://latex.codecogs.com/gif.latex?\textbf{S}_k=\textbf{H}_k\textbf{P}_{k|k-1}\textbf{H}_k^T+\textbf{R}_k" /> (**测量残差协方差**)
-    * <img src="http://latex.codecogs.com/gif.latex?\textbf{K}_k=\textbf{P}_{k|k-1}\textbf{H}_k^T\textbf{S}_k^{-1}" /> (**最佳卡尔曼增益**)  
+    * <img src="http://latex.codecogs.com/svg.latex?\tilde{\textbf{y}}_k=\textbf{z}_k-\textbf{H}_k\hat{\textbf{x}}_{k|k-1}" /> (**测量残差**)
+    * <img src="http://latex.codecogs.com/svg.latex?\textbf{S}_k=\textbf{H}_k\textbf{P}_{k|k-1}\textbf{H}_k^T+\textbf{R}_k" /> (**测量残差协方差**)
+    * <img src="http://latex.codecogs.com/svg.latex?\textbf{K}_k=\textbf{P}_{k|k-1}\textbf{H}_k^T\textbf{S}_k^{-1}" /> (**最佳卡尔曼增益**)  
     
     `然后用它们来更新滤波器变量x,p`
-    * <img src="http://latex.codecogs.com/gif.latex?\hat{\textbf{x}}_{k|k}=\hat{\textbf{x}}_{k-1|k-1}+\textbf{K}_k\widetilde{\textbf{y}}_k" /> (**更新的状态估计**)
-    * <img src="http://latex.codecogs.com/gif.latex?\textbf{P}_{k|k}=(I-\textbf{K}_k\textbf{H}_k)\textbf{P}_{k|k-1}" />  (**预测估计协方差矩阵**)
+    * <img src="http://latex.codecogs.com/svg.latex?\hat{\textbf{x}}_{k|k}=\hat{\textbf{x}}_{k-1|k-1}+\textbf{K}_k\widetilde{\textbf{y}}_k" /> (**更新的状态估计**)
+    * <img src="http://latex.codecogs.com/svg.latex?\textbf{P}_{k|k}=(I-\textbf{K}_k\textbf{H}_k)\textbf{P}_{k|k-1}" />  (**预测估计协方差矩阵**)
 
 ### ![](https://img.shields.io/badge/6-%E5%9F%BA%E4%BA%8E%E5%B8%8C%E5%B0%94%E4%BC%AF%E7%89%B9--%E9%BB%84%E5%8F%98%E6%8D%A2%E7%9A%84%E6%A8%A1%E6%80%81%E5%88%86%E8%A7%A3-yellowgreen)
 
