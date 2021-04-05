@@ -37,12 +37,12 @@
 
 ### ![](https://img.shields.io/badge/1.3-%E5%B0%8F%E6%B3%A2%E5%88%86%E8%A7%A3%E9%87%8D%E6%9E%84%E4%B8%8E%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E5%8E%BB%E5%99%AA%E7%BB%93%E5%90%88-blue)
 
-基本思路：先在通过DWT的时频图中判断出频率分段点，然后结合matplotlib的GUI功能获取其坐标，进而分时间进行FT滤波，最后拼接起来
+* 基本思路：先在通过DWT的时频图中判断出频率分段点，然后结合matplotlib的GUI功能获取其坐标，进而分时间进行FT滤波，最后拼接起来
 
-不足：在分界点处的信号突变点会出现相位错误
+* 不足：在分界点处的信号突变点会出现相位错误
 
-
-效果见图
+* 效果:
+* ![](https://i.loli.net/2021/04/05/pF3TtWxjSwqaBYo.png)
 
 
 ## ![](https://img.shields.io/badge/2-%E8%87%AA%E9%80%82%E5%BA%94%E6%BB%A4%E6%B3%A2-yellowgreen)
@@ -54,17 +54,18 @@
 * `前提假设：信号和噪声都是平稳的`
 
 * 维纳滤波器可用于解决非因果滤波器`需要无限量过去和未来的数据`、因果滤波器`需要使用无限量过去的数据`和FIR的问题，但是维纳滤波器一般用于解决第二种问题  
-* 对于因果问题，维纳滤波器的解决方式：<img src="http://latex.codecogs.com/svg.latex?\overrightarrow{h}_{opt}=\overrightarrow{R}_{xx}^{-1}\overrightarrow{R}_{xs}" />  
+* 对于因果问题，维纳滤波器的解决方式：
+    * <img src="http://latex.codecogs.com/svg.latex?\overrightarrow{h}_{opt}=\overrightarrow{R}_{xx}^{-1}\overrightarrow{R}_{xs}" />  
 
-<img src="http://latex.codecogs.com/svg.latex?\overrightarrow{R}_{xs}=\begin{bmatrix} \overrightarrow{R}_{xs}(0) & \overrightarrow{R}_{xs}(1) ... & \overrightarrow{R}_{xs}(M) \end{bmatrix}^T" />  
+    * <img src="http://latex.codecogs.com/svg.latex?\overrightarrow{R}_{xs}=\begin{bmatrix} \overrightarrow{R}_{xs}(0) & \overrightarrow{R}_{xs}(1) ... & \overrightarrow{R}_{xs}(M) \end{bmatrix}^T" />  
 
-<img src="http://latex.codecogs.com/svg.latex?\overrightarrow{R}_{xx}=\begin{bmatrix} \overrightarrow{R}_{xx}(0) & \overrightarrow{R}_{xx}(1) & ... & \overrightarrow{R}_{xx}(M) \\ \overrightarrow{R}_{xx}(1) & \overrightarrow{R}_{xx}(2) & ... & \overrightarrow{R}_{xx}(M-1) \\ ... & ... &... & ... \\ \overrightarrow{R}_{xx}(M) & \overrightarrow{R}_{xx}(M-1) & ... & \overrightarrow{R}_{xx}(0)\end{bmatrix}^T" />  
+    * <img src="http://latex.codecogs.com/svg.latex?\overrightarrow{R}_{xx}=\begin{bmatrix} \overrightarrow{R}_{xx}(0) & \overrightarrow{R}_{xx}(1) & ... & \overrightarrow{R}_{xx}(M) \\ \overrightarrow{R}_{xx}(1) & \overrightarrow{R}_{xx}(2) & ... & \overrightarrow{R}_{xx}(M-1) \\ ... & ... &... & ... \\ \overrightarrow{R}_{xx}(M) & \overrightarrow{R}_{xx}(M-1) & ... & \overrightarrow{R}_{xx}(0)\end{bmatrix}^T" />  
 
 * 根据这个公式求出最佳的h(t)，含噪声信号和它的卷积就是期望信号  
 
 * 最后的效果如下：由于对称矩阵的特点，以至于有一半的信号未被恢复，对于平稳信号而言，并未造成信号的丢失（个人认为是的吧） 
 
-*![wiener](https://i.loli.net/2021/04/03/DVKAtp64517gNod.png)
+* ![wiener](https://i.loli.net/2021/04/03/DVKAtp64517gNod.png)
 
 ### ![](https://img.shields.io/badge/4-%E5%9F%BA%E4%BA%8E%E7%BB%B4%E7%BA%B3%E6%BB%A4%E6%B3%A2%E5%99%A8%E7%9A%84LMS%E7%AE%97%E6%B3%95-yellowgreen)
 
@@ -77,19 +78,19 @@
 * 缺点：收敛速度慢  
   
 
-* 算法实现： <img src="http://latex.codecogs.com/svg.latex?e(n)=d(n)-y(n);\\ \\y(n)=\overrightarrow{x}^T(n)\overrightarrow{w}^T(n);\\ \\ \overrightarrow{w}(n+1)=\overrightarrow{w}(n)+2*\mu*e(n)*\overrightarrow{x}(n)" />  
+* 算法实现： 
+* <img src="http://latex.codecogs.com/svg.latex?e(n)=d(n)-y(n);\\ \\y(n)=\overrightarrow{x}^T(n)\overrightarrow{w}^T(n);\\ \\ \overrightarrow{w}(n+1)=\overrightarrow{w}(n)+2*\mu*e(n)*\overrightarrow{x}(n)" />  
 * 收敛效率：
 
 
 
 ### ![](https://img.shields.io/badge/5-%E5%8D%A1%E5%B0%94%E6%9B%BC%E6%BB%A4%E6%B3%A2%E5%99%A8-yellowgreen)  
-<img align="right" img width = '300' height = '200' src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Kalman_filter_model.png"/>  
+  <img align="right" img width = '300' height = '200' src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Kalman_filter_model.png"/>  
 
 * 又称为线性二次滤波LQE，使用随时间观察到的一系列测试值，并产生未知变量的估计值  
 
 
-
-应用领域： **信号处理**，**机器人运动预测**   
+* 应用领域： **信号处理**，**机器人运动预测**   
 
 
 ![](https://img.shields.io/badge/-%E7%BA%AF%E6%97%B6%E5%9F%9F%E6%BB%A4%E6%B3%A2%E5%99%A8-lightgrey)  
