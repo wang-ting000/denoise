@@ -2,10 +2,14 @@
 
 去噪的方法很多，其中小波去噪、自适应去噪、卡尔曼滤波器都有不同的特点。白噪声因为其频谱范围宽，传统的滤波器无法达到较好的滤波目的。
 ## ![](https://img.shields.io/badge/1-%E5%B0%8F%E6%B3%A2%E5%8F%98%E6%8D%A2-yellowgreen)
-  小波去噪的经典方法有：阈值法，小波分解法，小波包分解法
+  * 小波去噪的经典方法有：阈值法，小波分解法，小波包分解法
+
+  * 连续小波变换得到的系数是时间和频率，根据小波系数可以画出时频图如下：   
+  ---
+<img align="left" img width = '400' height = '300' src="https://i.loli.net/2021/04/05/I9VNQMWDfPZb6iL.png"/>
+<img align="right" img width = '400' height = '300' src="https://i.loli.net/2021/04/05/kXFeMiQhnpfr4A9.png"/>
   
-  连续小波变换得到的系数是时间和频率，根据小波系数可以画出时频图
-  （图片已给出）
+  
   
 ### ![](https://img.shields.io/badge/1.1-%E9%98%88%E5%80%BC%E6%B3%95%E5%8E%BB%E5%99%AA-blue)
 
