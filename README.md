@@ -46,8 +46,9 @@
 
 
 ## ![](https://img.shields.io/badge/2-%E8%87%AA%E9%80%82%E5%BA%94%E6%BB%A4%E6%B3%A2-yellowgreen)
-* 主要包含基于维纳滤波器的 `LMS算法` 、 `递推最小二乘的RLS算法` 和 `卡尔曼滤波器 `
-[文档](小波变换的延申.pdf)
+* 主要包含基于维纳滤波器的 `LMS算法` 、 `递推最小二乘的RLS算法` 和 `卡尔曼滤波器 `  
+
+* [文档](小波变换的延申.pdf)
 ### ![](https://img.shields.io/badge/3-%E7%BB%B4%E7%BA%B3%E6%BB%A4%E6%B3%A2%E5%99%A8-yellowgreen)  
 
 原理是使估计值和期望值之间的均方误差最小化
