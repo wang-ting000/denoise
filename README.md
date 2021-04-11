@@ -81,7 +81,9 @@
   
 
 * 算法实现： 
-* <img src="http://latex.codecogs.com/svg.latex?e(n)=d(n)-y(n);\\ \\y(n)=\overrightarrow{x}^T(n)\overrightarrow{w}^T(n);\\ \\ \overrightarrow{w}(n+1)=\overrightarrow{w}(n)+2*\mu*e(n)*\overrightarrow{x}(n)" />  
+* <img src="http://latex.codecogs.com/svg.latex?e(n)=d(n)-y(n); " />  
+* <img src="http://latex.codecogs.com/svg.latex?y(n)=\overrightarrow{x}^T(n)\overrightarrow{w}^T(n)"/>
+* <img src="http://latex.codecogs.com/svg.latex?y(n)=\overrightarrow{w}(n+1)=\overrightarrow{w}(n)+2*\mu*e(n)*\overrightarrow{x}(n)"/>
 * 收敛效率：
     * 如果步长μ的取值较大，则收敛速度快，因此μ需要满足一定的范围：0<μ<2/λ<sub>max</sub>,其中λ<sub>max</sub>是自相关矩阵的最大特征值；如果未达到这个条件，滤波器将无法收敛，系统也是非稳定的
 
