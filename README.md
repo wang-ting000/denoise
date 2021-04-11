@@ -120,11 +120,14 @@
     * <img src="http://latex.codecogs.com/svg.latex?\textbf{P}_{k|k}=(I-\textbf{K}_k\textbf{H}_k)\textbf{P}_{k|k-1}" />  (**预测估计协方差矩阵**)
 
 ### ![](https://img.shields.io/badge/6-%E5%9F%BA%E4%BA%8E%E5%B8%8C%E5%B0%94%E4%BC%AF%E7%89%B9--%E9%BB%84%E5%8F%98%E6%8D%A2%E7%9A%84%E6%A8%A1%E6%80%81%E5%88%86%E8%A7%A3-yellowgreen)
-
+* 将数据分解为本质模态函数(`IMF`),这个过程称为经验模态分解(`EMD`),然后对IMF进行希尔伯特变换以得到数据的频率
+* ![](https://img.shields.io/badge/-%E4%B8%8D%E5%90%8C%E4%BA%8EFT%2C%E6%98%AF%E4%B8%80%E7%A7%8D%E7%AE%97%E6%B3%95%E8%80%8C%E9%9D%9E%E7%90%86%E8%AE%BA%E5%B7%A5%E5%85%B7-brightgreen)
+* **IMF**:一个函数若属于IMF，代表其波形局部对称于零平均值
+* **EMD**:将信号分解成IMF，具体过程见[👉](https://zh.wikipedia.org/zh-cn/%E5%B8%8C%E7%88%BE%E4%BC%AF%E7%89%B9-%E9%BB%83%E8%BD%89%E6%8F%9B)
 
 
 ### ![](https://img.shields.io/badge/7-LS--filter-yellowgreen)
 RLS算法和LMS算法都属于LS滤波器的衍生  
 LMS算法和模型无关，跟踪特性好；RLS算法和模型有关，收敛速度快、精度高但同时计算时间也长
-其实LMS是一种特殊情况下的RLS
+LMS是一种特殊情况下的RLS
 
