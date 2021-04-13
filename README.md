@@ -127,7 +127,17 @@
 
 
 ### ![](https://img.shields.io/badge/7-LS--filter-yellowgreen)
-RLS算法和LMS算法都属于LS滤波器的衍生  
-LMS算法和模型无关，跟踪特性好；RLS算法和模型有关，收敛速度快、精度高但同时计算时间也长
-LMS是一种特殊情况下的RLS
+* RLS算法和LMS算法都属于LS滤波器的衍生  
+* LMS算法和模型无关，跟踪特性好；RLS算法和模型有关，收敛速度快、精度高但同时计算时间也长
+* LMS是一种特殊情况下的RLS
+* `初始化`：
+* <img src="http://latex.codecogs.com/svg.latex?P(0)=\delta*I" />
+* <img src="http://latex.codecogs.com/svg.latex?\hat{W}(0)=0, \lamdba = 1" />
+* `迭代`:
+* <img src="http://latex.codecogs.com/svg.latex?k(n)=\frac{\lamdab^{-1}P(n-1)u(n)}{1+\lamdab^{-1}^Hu(n)P(n-1)u(n)}" />
+* <img src="http://latex.codecogs.com/svg.latex?k(n)=\kesai(n)=d(n)-\hat{W}^H(n-1)u(n)" />
+* <img src="http://latex.codecogs.com/svg.latex?P(n)=\lambda^{-1}(P(n-1)-u^H(n)P(n-1)" />
 
+
+
+总的来说，傅里叶变换适用于
