@@ -132,11 +132,11 @@
 * LMS是一种特殊情况下的RLS
 * `初始化`：
 * <img src="http://latex.codecogs.com/svg.latex?P(0)=\delta*I" />
-* <img src="http://latex.codecogs.com/svg.latex?\hat{W}(0)=0, \lamdba = 1" />
+* <img src="http://latex.codecogs.com/svg.latex?\hat{W}(0)=0, \lambda = 1" />
 * `迭代`:
-* <img src="http://latex.codecogs.com/svg.latex?k(n)=\frac{\lamdab^{-1}P(n-1)u(n)}{1+\lamdab^{-1}^Hu(n)P(n-1)u(n)}" />
-* <img src="http://latex.codecogs.com/svg.latex?k(n)=\kesai(n)=d(n)-\hat{W}^H(n-1)u(n)" />
-* <img src="http://latex.codecogs.com/svg.latex?P(n)=\lambda^{-1}(P(n-1)-u^H(n)P(n-1)" />
+* <img src="http://latex.codecogs.com/svg.latex?k(n)=\frac{\lambda^{-1}P(n-1)u(n)}{1+\lambda^{-1}^Hu(n)P(n-1)u(n)}" />
+* <img src="http://latex.codecogs.com/svg.latex?k(n)=\xi(n)=d(n)-\hat{W}^H(n-1)u(n)" />
+* <img src="http://latex.codecogs.com/svg.latex?P(n)=\lambda^{-1}(P(n-1)-k(n)u^H(n)P(n-1)" />
 
 
 
