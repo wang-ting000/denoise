@@ -134,10 +134,20 @@
 * <img src="http://latex.codecogs.com/svg.latex?P(0)=\delta*I" />
 * <img src="http://latex.codecogs.com/svg.latex?\hat{W}(0)=0, \lambda = 1" />
 * `迭代`:
-* <img src="http://latex.codecogs.com/svg.latex?k(n)=\frac{\lambda^{-1}P(n-1)u(n)}{1+\lambda^{-1}^Hu(n)P(n-1)u(n)}" />
-* <img src="http://latex.codecogs.com/svg.latex?k(n)=\xi(n)=d(n)-\hat{W}^H(n-1)u(n)" />
+* <img src="http://latex.codecogs.com/svg.latex?k(n)=\frac{\lambda^{-1}P(n-1)u(n)}{1+\lambda^{-1}u^H(n)P(n-1)u(n)}" />
+* <img src="http://latex.codecogs.com/svg.latex?\xi(n)=d(n)-\hat{W}^H(n-1)u(n)" />
 * <img src="http://latex.codecogs.com/svg.latex?P(n)=\lambda^{-1}(P(n-1)-k(n)u^H(n)P(n-1)" />
 
 
 
-总的来说，傅里叶变换适用于
+**总的来说： 
+
+-[x]FFT去噪适用于平稳信号，方法容易，在简单情况下处理效果不错，但是由于余弦函数的特点，不能够较好地拟合出发生剧烈变化的位置，会出现吉布斯现象  
+
+-[x]WT则可以很好地解决这一问题，因为它的基是各类小波，可以在时间和频率尺度上有不同的分辨率，但是依旧受到[海森堡不确定性原理](https://www.youtube.com/watch?v=TDfag7uYLww)的制约，所以时频分辨率不能同时达到最大。小波变换适于分析非平稳信号，此时用功率谱密度呈现信号特点已失去了意义，数学角度上也很好解释：非平稳信号不再有自相关函数只和时间差τ有关系，所以也就无法求得自相关函数的FT了
+
+
+-[x]HHT使用EMD分解的方法，不受到海森堡不确定性的制约,因此可以同时在时频维度达到较好的分辨率，相比于小波变换对频率的定位更加精准了。此外，借助Hilbert变换求得相位函数，再对相位函数求导产生瞬时频率，这样求出的瞬时频率是局部性的，而傅立叶变换的频率是全局性的，小波变换的频率是区域性的。
+
+
+[小波变换去噪.docx](https://github.com/wang-ting000/denoise/files/6300485/default.docx)
